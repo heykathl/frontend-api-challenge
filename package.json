@@ -20,5 +20,8 @@
   "homepage": "https://github.com/heykathl/frontend-api-challenge#readme",
   "dependencies": {
     "jest": "^27.5.1"
+  },
+  "devDependencies": {
+    "jest-fetch-mock": "^3.0.3"
   }
 }

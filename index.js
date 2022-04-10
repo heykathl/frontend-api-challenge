@@ -1,9 +1,18 @@
 const ChitterModel = require('./chitterModel.js')
 const ChitterView = require('./chitterView.js')
+const ChitterApi = require('./chitterApi.js')
 
 const chitterModel = new ChitterModel();
-const chitterView = new ChitterView(chitterModel)
+const chitterApi = new ChitterApi();
+const chitterView = new ChitterView(chitterModel, chitterApi)
 
-chitterModel.addPeep('Hello')
-chitterModel.addPeep('Bye')
-chitterView.viewPeeps()
+// console.log('HELLO')
+// chitterModel.addPeep('Hello')
+// chitterModel.addPeep('Bye')
+// chitterView.viewPeeps()
+
+chitterApi.loadPeeps((loadedPeeps) => {
+  chitterModel.setPeeps(loadedPeeps);
+  chitterView.viewPeeps();
+})
+

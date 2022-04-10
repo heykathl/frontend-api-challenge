@@ -10,6 +10,10 @@ class ChitterModel {
   addPeep(peep){
     this.peeps.push(peep)
   }
+
+  setPeeps(loadedPeeps){
+    this.peeps = loadedPeeps
+  }
   
 }  
 module.exports = ChitterModel;
